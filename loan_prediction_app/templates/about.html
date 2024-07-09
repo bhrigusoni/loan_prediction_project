@@ -1,0 +1,49 @@
+<!-- about.html -->
+
+{% extends "base.html" %}
+
+{% block title %}About This App{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ url_for('home') }}">Loan Approval Predictor</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="https://yourportfolio.com">About Me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/BhriguSoni">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.linkedin.com/in/bhrigu-soni/">LinkedIn</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('about') }}">About This App</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5" style="padding-bottom: 31.5px;">
+    <h1 class="text-center">About This App</h1>
+    <div class="info-container mt-5">
+        <h2>About This App</h2>
+        <p> This web application predicts whether you are eligible for a loan based on
+            various factors such as dependents, education, employment status, income, loan amount, loan
+            term, and Cibil score.</p>
+        <p> Fill out the form on the home page to get your loan eligibility prediction.</p>
+        </br>
+    </br></br>
+    </br></br>
+    </br></br>
+
+    </div>
+</div>
+
+
+{% endblock %}

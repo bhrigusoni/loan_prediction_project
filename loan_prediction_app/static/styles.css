@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #f8f9fa, #e0e0e0);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    margin-top: 0px ;
+    margin-left: 20px auto;
+    padding-top: 0px;
+}
+
+.text-center{
+    height: 20px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #343a40;
+}
+
+.navbar navbar-expand-lg navbar-dark bg-dark  {
+    height: 10%;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+
+}
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.info-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 1px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.btn-success {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 0px;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.result {
+    background-color: #7fb672fa;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.result-container {
+    margin-top: 0px;
+}
+
+.result-text{
+    font-family: Arial, sans-serif;
+    color: black;
+    
+}
+
+.footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative; /* Relative positioning */
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 12%;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0;
+    padding-right: 0;
+    
+}
+
+footer a {
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+.footer.fixed {
+    position: fixed; /* Fixed positioning for about page */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+

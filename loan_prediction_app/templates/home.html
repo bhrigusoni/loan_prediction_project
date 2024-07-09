@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}Loan Approval Predictor{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ url_for('home') }}">Loan Approval Predictor</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="https://yourportfolio.com">About Me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/BhriguSoni">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.linkedin.com/in/bhrigu-soni/">LinkedIn</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('about') }}">About This App</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="text-center">Loan Approval Predictor</h1>
+    <div class="row mt-5">
+        <div class="col-md-5">
+            <div class="form-container">
+                <form action="{{ url_for('predict_loan') }}" method="POST">
+                    <div class="form-group">
+                        <label for="Dependents" class="form-label">Dependents</label>
+                        <input type="number" class="form-control" id="Dependents" name="Dependents" required min="0"
+                            class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="Education" class="form-label">Education</label>
+                        <select class="form-select" id="Education" name="Education" required>
+                            <option value="" disabled selected>Select Education</option>
+                            <option value="1">Non-Graduate</option>
+                            <option value="0">Graduate</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="Self_Employed" class="form-label">Self Employed</label>
+                        <select class="form-select" id="Self_Employed" name="Self_Employed" required>
+                            <option value="" disabled selected>Select Employment Status</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Income_Annum" class="form-label">Annual Income</label>
+                        <input type="number" class="form-control" id="Income_Annum" name="Income_Annum" required min="0"
+                            class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="Loan_Amount" class="form-label">Loan Amount</label>
+                        <input type="number" class="form-control" id="Loan_Amount" name="Loan_Amount" required min="0"
+                            class="form-control">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="Loan_Term" class="form-label">Loan Term (in months)</label>
+                        <input type="number" class="form-control" id="Loan_Term" name="Loan_Term" required min="0"
+                            class="form-control">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="Cibil_Score" class="form-label">Cibil Score</label>
+                        <input type="number" class="form-control" id="Cibil_Score" name="Cibil_Score" required min="300"
+                            class="form-control">
+                    </div>
+
+                    <input type="submit" value="Predict" class="btn btn-primary btn-block">
+                </form>
+
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div id="about-this-app" class="info-container">
+                <h2>About This App</h2>
+                <p> This web application predicts whether you are eligible for a loan based on
+                    various factors such as dependents, education, employment status, income, loan amount, loan
+                    term, and Cibil score.</p>
+                <p> Fill out the form on the left to get your loan eligibility prediction.</p>
+            </div>
+            {% if prediction %}
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <div class="result-container">
+                        <div class="result">
+                            <h2>Loan Prediction Result:</h2>
+                            {% if prediction_result == 0 %}
+                            <h2 class="text-success">Congratulations! You are Eligible for the Loan.</h2>
+                            {% else %}
+                            <h2 class="text-danger">Sorry, You are not Eligible for the Loan.</h2>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+</footer>
+
+{% endblock %}
